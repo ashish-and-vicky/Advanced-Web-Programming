@@ -1,0 +1,374 @@
+ASSIGNMENT-3
+
+Part-1
+********************************************************************************************************
+Ques1
+
+#!/bin/bash
+#prime number
+
+echo -e "enter the number\c"
+read input
+
+if [ $input -eq $input ] 2>/dev/null
+then
+        for((i=2;i<=input;i++))
+        do
+                for((j=2;j<=input;j++))
+                do
+                        if [ `expr $i % $j` -eq 0 ]
+                                then
+                                break
+                        fi
+                done
+                if [ $i -eq $j ]
+                then
+                        echo $i
+                fi
+        done
+else
+        echo "$input is not an integer"
+fi
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques2
+
+#! bin/bash
+#even_odd
+echo "enter the number to check"
+read n
+
+if [ $(( $n % 2 )) -eq 0 ]
+then
+        echo "no is even"
+else
+        echo "no is odd"
+fi
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques3
+
+#! /bin/bash
+echo "enter the decimal number"
+read n
+bin=0
+while [ $n -ne 0 ]
+do
+r=`expr $n%2|bc`
+n=`expr $n/2|bc`
+bin=$r$bin
+done
+bin=`expr $bin/10|bc`
+echo $bin
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques4
+
+#! bin/bash
+# swap using intermediate variable
+
+echo "enter number 1"
+read a
+echo "enter number 2"
+read b
+
+echo "values before swapping : $a $b"
+
+let temp=a
+let a=b
+let b=temp
+
+echo "values after swapping : $a $b"
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques5
+
+#! /bin/bash
+#swap without using intermediate variable
+echo "enter no 1"
+read a
+
+echo "enter no 2"
+read b
+
+echo “value before swapping : $a $b”
+
+let a=a+b
+let b=a-b
+let a=a-b
+
+echo "value after swapping : $a $b "
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques6
+
+#! bin/bash
+#reverse of a number
+echo "enter a number"
+read num
+
+let input=num
+reverse=0
+
+while [ $input -gt 0 ]
+
+do
+
+let reverse=reverse*10
+let reverse=reverse+input%10
+let input=input/10
+
+done
+
+echo "reverse of $num is $reverse"
+exit 0
+
+----------------------------------------------------------------------------------------------------------------------------
+Ques7
+
+#! bin/bash
+#multiplication table of integer
+
+echo "enter the number whose table you want to print"
+
+read number
+digit=1
+
+while [ $digit -ne 11 ]
+
+do
+
+let pro=number*digit
+echo " $number x $digit = $pro"
+let digit=digit+1
+
+done
+
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques8
+
+#! bin/bash
+#leapyear
+
+echo "enter a year"
+
+read year
+
+if [ `expr $year % 4` -eq 0 ]; then
+if [ `expr $year % 100` -eq 0 ]; then
+if [ `expr $year % 400` -eq 0 ]; then
+
+echo "$year is a leap year"
+else
+echo "$year is not a leap year"
+fi
+else
+echo "$year is a leap year"
+fi
+else
+echo "$year is not a leap year"
+fi
+
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques9
+
+#!bin/bash
+#pattern
+
+k=1
+
+echo "enter the number of rows"
+read n
+for((i=1;i<=n;i++))
+do
+        for((j=1;j<=i;j++))
+        do
+                echo -e "$k\c"
+                let k=k+1
+        done
+        echo ""
+done
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques10
+
+#!/bin/bash
+#pattern switch case
+
+echo -e "menu \n "
+echo -e "enter the input"
+read choice
+case "$choice" in 
+
+[[:digit:]]) echo "you have entered a number";;
+[[:lower:]]) echo "the entered character is a lowercase character";;
+[[:upper:]]) echo "the entered character is an uppercase character";;
+*)echo "please check your input"
+esac
+
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques11
+
+#!/bin/bash
+#output of date,pwd,df cmd
+
+for i in pwd date df
+do
+        $i
+done
+
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques12
+
+#! /bin/bash
+#file-search
+
+n=$1
+
+if [ -a "$n" ]
+then
+echo "$n is a file"
+else
+echo "$n is not a file"
+fi
+
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques13
+
+#! /bin/bash
+#file-search
+
+n=$1
+
+if [ -d "$n" ]
+then
+echo "$n is a directory"
+else
+echo "$n is not a directory"
+fi
+
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques14
+
+#!/bin/bash
+IFS=$'\n'
+file=$1
+        for r in `cat $file`
+        do
+             echo $r
+             sleep 1
+
+        done
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques15
+
+#!/bin/bash
+
+        while read a
+        do
+             echo $a
+        done < $1
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques16
+
+#!/bin/bash
+# array
+
+echo -e "Enter elements of array : \c"
+read -a arr
+
+j=0
+
+for i in ${arr[@]}
+do
+        echo "index $j element is $i"
+        let j=j+1
+done
+	echo ${#arr[@]}
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques17
+
+#!/bin/bash
+# read elements of array and find smallest element
+
+echo -e "Enter elements of array : \c"
+read -a arr
+let small=${arr[0]}
+
+for i in ${arr[@]} ; do
+        if [ "$small" -gt "$i" ]; then
+        let small=i
+        fi
+done
+
+echo "Smallest element in array : $small"
+
+exit 0
+----------------------------------------------------------------------------------------------------------------------------
+Ques18
+
+#! /bin/bash
+#calculator
+echo "enter first number"
+read num1
+echo "enter second number"
+read num2
+add()
+{
+        let sum=num1+num2
+        echo "addition is $sum"
+}
+sub()
+{
+        let subs=num1-num2
+        echo "subtraction is $subs"
+} MNM was,
+mul()
+{
+        let mult=num1*num2
+        echo "multiplication is $mult"
+}
+add num1 num2
+sub num1 num2
+mul num1 num2
+----------------------------------------------------------------------------------------------------------------------------
+
+Part-2
+********************************************************************************************************
+#!/bin/bash
+
+for ((i=1;i<20;i++))
+do
+        echo "bash shell"
+        sleep 1
+done
+
+exit 0
+
+
+OUTPUT
+
+bash part2.sh > /dev/null &
+[3] 28405
+[2]   Terminated              bash part2.sh
+[dac109@setuk day3]$ jobs
+[1]+  Stopped                 bash part2.sh
+[3]-  Running                 bash part2.sh > /dev/null &
+[dac109@setuk day3]$ fg
+bash part2.sh
+bash shell
+bash shell
+^Z
+[1]+  Stopped                 bash part2.sh
+[3]   Done                    bash part2.sh > /dev/null
+
+
