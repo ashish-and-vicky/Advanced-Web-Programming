@@ -23,7 +23,7 @@ let getWeather = () => {
 };
 
 let domOperationHere = (refjson) => {
-  console.log(refjson.main);
+  console.log(refjson.main); //chekout the console while calling this API...the temperature is obtained in the main part
   const name = refjson.name;
   const maxTemp = refjson.main.temp_max;
 
@@ -31,7 +31,7 @@ let domOperationHere = (refjson) => {
 
   const newElement = parent.children[0].cloneNode(true);
   newElement.style.display = "flex";
-  newElement.innerHTML = name + " " + maxTemp;
+  newElement.innerHTML = name + " " + maxTemp; // getting name and maxTemp present in the JSON we are getting from the API in console
 
   parent.insertBefore(newElement, parent.firstChild);
 

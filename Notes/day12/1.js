@@ -5,6 +5,7 @@ let callAjax = function () {
   xhr.onload = () => {
     const refJson = JSON.parse(xhr.responseText);
     // using this data :: we have to DOM Operation;
+    // refJason is the data which is comming to the console on our browser.
     domLogic(refJson);
   };
 

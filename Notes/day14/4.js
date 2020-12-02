@@ -12,6 +12,8 @@ let callAjaxUsingJquery = () => {
       .insertBefore($("#parent :nth-child(1)"));
 
     // clean the box
-    $("#textid").val("");
+    // val returns the value inside the yexy box
+    $("#textid").val(""); // here we are passing the space in the text box to clear the space when executed.
   });
 };
+
