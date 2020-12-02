@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
   // loading part :: logic is at method  abstact Logic
   porcessLogicHere();
 
-  // AJAX SYNTAX :: SERVER :: READY WITH THE SERVICE :: https://reqres.in/api/users?page=2
+  // AJAX SYNTAX :: SERVER :: READY WITH THE SERVICE :: https://reqres.in/api/users?page=2.....(demo server used for testing)
   // AJAX :: Programmatically we are making a request to URL.
   // STEP - 1 :: Create an Object
   let xhr = new XMLHttpRequest();
@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
     }
   };
 
-  // STEP - 2 There are 5 parametes, 2 Parametrs
+  // STEP - 2 There are 5 parametes, here we are taking 2 Parametrs...type this in console and see which are the parameters.
   const url = `https://reqres.in/api/users?page=2`;
   xhr.open("GET", url);
 
@@ -38,6 +38,7 @@ let porcessLogicHere = function () {
 
   // lets create :: lets assume this value coming from server/db
   // how we will get :: uisng AJAX :: CALL AJAX :: JSON/XML :: API
+  // suppose if we want to access JSON then the syntax is....... <name of variable>.<json object name>
   let postList = [
     { id: 1, post: "Hello World" },
     { id: 2, post: "Hello Universe" },

@@ -4,6 +4,8 @@
  */
 window.addEventListener("load", () => {
   // We can read BODY Elment Once the page is loaded.
+  // This method loads the page. If the network is slow then it does not stop other elements to load.
+  // Therefore this is asynchronous in nature.
   const pbc = document.querySelector("#parentBlockContainer");
   console.log(pbc);
 

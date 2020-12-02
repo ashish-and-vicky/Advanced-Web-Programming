@@ -13,6 +13,7 @@ window.addEventListener("load", () => {
     const newElement = pbc.children[0].cloneNode(true);
     newElement.style.display = "flex"; // none
     pbc.insertBefore(newElement, pbc.firstChild);
+    //firstChild is similar to children[0].
   }
 });
 
@@ -25,4 +26,4 @@ console.log(pbc1);
  * Event    => Click
  * Listener => likeMe
  */
-let likeMe = function () {};
+let likeMe = function () { };
