@@ -1,3 +1,15 @@
+# Day 15
+- What is NodeJS?
+- Server Side Programming (It can connect with DB) vs Client Side Programming
+- The JS in NodeJS does not only define that it can be used only in client side
+- Backend Engineer vs Front End Engineer
+- We can use Javascript in server environment, apart from Browser only.
+- It is Asynchronous in Nature.
+
+- NodeJS vs (JAVA[Servlet, JSP], PHP, ASP, .NET, Ruby Rail)
+- Older Generation does not Understand what is callback
+-Advantage or  Disadvantage (Programming Style / Structure) :: [Scripting Language]
+
 # Day 14
 
 - jQuery vs document (jquery was mainly designed to support DOM operation)
